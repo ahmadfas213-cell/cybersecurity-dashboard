@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cybersecurity Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="app">
+
+    <aside class="sidebar">
+        <div class="brand">
+            <div class="brand-icon">◈</div>
+            <div>
+                <strong>CYBER<span>SEC</span></strong>
+                <small>SECURITY CENTER</small>
+            </div>
+        </div>
+
+        <nav>
+            <a href="#overview" class="active">◉ Overview</a>
+            <a href="#threats">⚠ Threat Monitor</a>
+            <a href="#network">⌁ Network</a>
+            <a href="#activity">▣ Activity Logs</a>
+        </nav>
+
+        <div class="system-status">
+            <span class="status-dot"></span>
+            <div>
+                <strong>System Online</strong>
+                <small>All systems operational</small>
+            </div>
+        </div>
+    </aside>
+
+    <main class="main">
+
+        <header class="topbar">
+            <div>
+                <p class="eyebrow">SECURITY OPERATIONS CENTER</p>
+                <h1>Cybersecurity Dashboard</h1>
+            </div>
+
+            <div class="top-status">
+                <span class="live-dot"></span>
+                LIVE MONITORING
+                <span id="clock">00:00:00</span>
+            </div>
+        </header>
+
+        <section id="overview" class="hero-grid">
+
+            <div class="security-card panel">
+                <div class="panel-header">
+                    <span>SECURITY SCORE</span>
+                    <span class="mini-label">LIVE</span>
+                </div>
+
+                <div class="score-area">
+                    <div class="score-ring" id="scoreRing">
+                        <div>
+                            <strong id="securityScore">87</strong>
+                            <span>/100</span>
+                        </div>
+                    </div>
+
+                    <div class="score-info">
+                        <h2 id="securityStatus">GOOD</h2>
+                        <p>Your environment is currently protected.</p>
+
+                        <div class="progress">
+                            <div id="scoreBar"></div>
+                        </div>
+
+                        <small>Last analysis: <span id="lastAnalysis">Just now</span></small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel threat-summary">
+                <div class="panel-header">
+                    <span>THREAT LEVEL</span>
+                    <span class="badge low" id="threatBadge">LOW</span>
+                </div>
+
+                <div class="threat-number">
+                    <strong id="threatCount">3</strong>
+                    <span>detected events</span>
+                </div>
+
+                <div class="threat-bars">
+                    <div>
+                        <span>Critical</span>
+                        <b id="criticalCount">0</b>
+                    </div>
+
+                    <div>
+                        <span>High</span>
+                        <b id="highCount">1</b>
+                    </div>
+
+                    <div>
+                        <span>Medium</span>
+                        <b id="mediumCount">2</b>
+                    </div>
+
+                    <div>
+                        <span>Low</span>
+                        <b id="lowCount">8</b>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <section class="metrics">
+
+            <div class="metric panel">
+                <span class="metric-icon">◉</span>
+                <small>REQUESTS</small>
+                <strong id="requestCount">12,842</strong>
+                <em class="up">+8.4%</em>
+            </div>
+
+            <div class="metric panel">
+                <span class="metric-icon">⚠</span>
+                <small>THREATS BLOCKED</small>
+                <strong id="blockedCount">347</strong>
+                <em class="up">+12.1%</em>
+            </div>
+
+            <div class="metric panel">
+                <span class="metric-icon">⌁</span>
+                <small>ACTIVE CONNECTIONS</small>
+                <strong id="connectionCount">28</strong>
+                <em>stable</em>
+            </div>
+
+            <div class="metric panel">
+                <span class="metric-icon">◈</span>
+                <small>UPTIME</small>
+                <strong>99.98%</strong>
+                <em class="up">healthy</em>
+            </div>
+
+        </section>
+
+        <section class="grid-two">
+
+            <div class="panel" id="threats">
+                <div class="section-title">
+                    <div>
+                        <p class="eyebrow">REAL-TIME</p>
+                        <h2>Threat Monitor</h2>
+                    </div>
+
+                    <button class="action-btn" id="simulateThreat">
+                        + Simulate Event
+                    </button>
+                </div>
+
+                <div class="threat-list" id="threatList">
+
+                    <div class="threat-item">
+                        <div class="severity high"></div>
+                        <div class="threat-main">
+                            <strong>Suspicious Login Attempt</strong>
+                            <span>Multiple failed authentication requests</span>
+                        </div>
+                        <div class="threat-source">
+                            <code>185.220.101.42</code>
+                            <small>2 min ago</small>
+                        </div>
+                        <span class="severity-label high-text">HIGH</span>
+                    </div>
+
+                    <div class="threat-item">
+                        <div class="severity medium"></div>
+                        <div class="threat-main">
+                            <strong>Unusual API Traffic</strong>
+                            <span>Request frequency exceeded baseline</span>
+                        </div>
+                        <div class="threat-source">
+                            <code>172.16.24.18</code>
+                            <small>8 min ago</small>
+                        </div>
+                        <span class="severity-label medium-text">MEDIUM</span>
+                    </div>
+
+                    <div class="threat-item">
+                        <div class="severity medium"></div>
+                        <div class="threat-main">
+                            <strong>Port Scan Pattern</strong>
+                            <span>Multiple connection attempts detected</span>
+                        </div>
+                        <div class="threat-source">
+                            <code>45.142.212.77</code>
+                            <small>14 min ago</small>
+                        </div>
+                        <span class="severity-label medium-text">MEDIUM</span>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="panel" id="network">
+
+                <div class="section-title">
+                    <div>
+                        <p class="eyebrow">NETWORK</p>
+                        <h2>Traffic Monitor</h2>
+                    </div>
+
+                    <span class="online-label">
+                        <i></i> LIVE
+                    </span>
+                </div>
+
+                <div class="traffic-chart">
+                    <div class="chart-grid">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+
+                    <svg viewBox="0 0 700 240" preserveAspectRatio="none">
+                        <polyline
+                            id="trafficLine"
+                            points="0,185 45,165 90,178 135,120 180,145 225,110 270,130 315,90 360,105 405,72 450,115 495,80 540,95 585,55 630,75 700,40"
+                        />
+                    </svg>
+                </div>
+
+                <div class="traffic-stats">
+                    <div>
+                        <small>INBOUND</small>
+                        <strong id="inbound">4.82 MB/s</strong>
+                    </div>
+
+                    <div>
+                        <small>OUTBOUND</small>
+                        <strong id="outbound">2.17 MB/s</strong>
+                    </div>
+
+                    <div>
+                        <small>LATENCY</small>
+                        <strong id="latency">24 ms</strong>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+        <section class="grid-two">
+
+            <div class="panel">
+                <div class="section-title">
+                    <div>
+                        <p class="eyebrow">INFRASTRUCTURE</p>
+                        <h2>Port Status</h2>
+                    </div>
+                    <span class="online-label"><i></i> MONITORED</span>
+                </div>
+
+                <div class="port-table">
+
+                    <div class="port-row head">
+                        <span>PORT</span>
+                        <span>SERVICE</span>
+                        <span>STATUS</span>
+                    </div>
+
+                    <div class="port-row">
+                        <strong>22</strong>
+                        <span>SSH</span>
+                        <b class="closed">SECURED</b>
+                    </div>
+
+                    <div class="port-row">
+                        <strong>80</strong>
+                        <span>HTTP</span>
+                        <b class="open">OPEN</b>
+                    </div>
+
+                    <div class="port-row">
+                        <strong>443</strong>
+                        <span>HTTPS</span>
+                        <b class="open">OPEN</b>
+                    </div>
+
+                    <div class="port-row">
+                        <strong>3306</strong>
+                        <span>MySQL</span>
+                        <b class="closed">SECURED</b>
+                    </div>
+
+                    <div class="port-row">
+                        <strong>8080</strong>
+                        <span>HTTP Proxy</span>
+                        <b class="closed">SECURED</b>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="panel" id="activity">
+
+                <div class="section-title">
+                    <div>
+                        <p class="eyebrow">EVENT STREAM</p>
+                        <h2>Activity Logs</h2>
+                    </div>
+
+                    <button class="clear-btn" id="clearLogs">
+                        Clear
+                    </button>
+                </div>
+
+                <div class="logs" id="logs">
+
+                    <div class="log">
+                        <span class="log-time">22:41:08</span>
+                        <span class="log-type success">INFO</span>
+                        <span>Security scan completed successfully</span>
+                    </div>
+
+                    <div class="log">
+                        <span class="log-time">22:40:52</span>
+                        <span class="log-type warning">WARN</span>
+                        <span>Unusual traffic pattern detected</span>
+                    </div>
+
+                    <div class="log">
+                        <span class="log-time">22:39:31</span>
+                        <span class="log-type success">INFO</span>
+                        <span>Firewall rules synchronized</span>
+                    </div>
+
+                    <div class="log">
+                        <span class="log-time">22:38:14</span>
+                        <span class="log-type danger">ALERT</span>
+                        <span>Authentication attempt blocked</span>
+                    </div>
+
+                </div>
+            </div>
+
+        </section>
+
+        <footer>
+            <span>CYBERSECURITY DASHBOARD v1.0</span>
+            <span>CLIENT-SIDE SECURITY SIMULATION</span>
+        </footer>
+
+    </main>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
